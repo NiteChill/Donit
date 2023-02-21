@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 import './default.scss';
@@ -9,7 +9,9 @@ import Navbar from './components/Navbar/Navbar';
 import { svg } from './datas/svg';
 
 function App() {
-  const [userArray, setUserArray] = useState('')
+  const [userArray, setUserArray] = useState('');
+  const { name } = useParams();
+
   useEffect(() => {
     if (
       JSON.parse(localStorage.getItem('userArray')) &&
@@ -23,18 +25,19 @@ function App() {
           logo: svg.twoRectangles,
         },
       ]);
+      localStorage.setItem('userArray', JSON.stringify(userArray));
     }
     console.log(userArray);
-  }, [])
-    return (
-      <div className='App'>
-        <Header />
-        <div className='d-flex-row w-full h-full'>
-          <Navbar todo={userArray} />
-          <Outlet />
-        </div>
+  }, []);
+  return (
+    <div className='App'>
+      <Header />
+      <div className='d-flex-row w-full h-full'>
+        <Navbar todo={userArray} active={name} />
+        <Outlet />
       </div>
-    );
+    </div>
+  );
 }
 
 export default App;

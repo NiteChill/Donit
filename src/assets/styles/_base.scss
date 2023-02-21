@@ -26,17 +26,12 @@ a {
   text-decoration: none;
 }
 
-// active //
-
-.active {
-  background: $white-500;
-}
-
 // cursor //
 
 .cursor-pointer {
   cursor: pointer;
 }
+
 .cursor-context-menu {
   cursor: context-menu;
 }
@@ -46,6 +41,12 @@ a {
 .hover-b-white500 {
   &:hover {
     background: $white-500;
+  }
+}
+
+.hover-b-white600 {
+  &:hover {
+    background: $white-600;
   }
 }
 
