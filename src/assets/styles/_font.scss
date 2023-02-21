@@ -102,8 +102,8 @@
   font-size: 5rem;
 }
 
-.ff-roboto {
-  font-family: $Roboto;
+.ff-primary {
+  font-family: $Primary;
 }
 
 .fw-100 {
@@ -140,4 +140,18 @@
 
 .fw-900 {
   font-weight: 900;
+}
+
+// text-align //
+
+.ta-center {
+  text-align: center;
+}
+
+.ta-left {
+  text-align: left;
+}
+
+.ta-right {
+  text-align: right;
 }

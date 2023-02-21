@@ -2,8 +2,28 @@
 
 // background //
 
-.background-none {
+.b-none {
   background: none;
+}
+
+.b-black300 {
+  background: $black-300;
+}
+
+.b-black400 {
+  background: $black-400;
+}
+
+.b-black500 {
+  background: $black-500;
+}
+
+.b-black600 {
+  background: $black-600;
+}
+
+.b-black700 {
+  background: $black-700;
 }
 
 .b-white300 {
@@ -52,3 +72,22 @@
   color: $black-700;
 }
 
+.c-white300 {
+  color: $white-300;
+}
+
+.c-white400 {
+  color: $white-400;
+}
+
+.c-white500 {
+  color: $white-500;
+}
+
+.c-white600 {
+  color: $white-600;
+}
+
+.c-white700 {
+  color: $white-700;
+}

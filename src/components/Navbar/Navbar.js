@@ -15,8 +15,8 @@ export default function Navbar() {
     //console.log(searchValue);
   }, [searchValue]);
   return (
-    <nav className='d-flex-column w-280 b-white400 border-right-2 border-white500 h-full'>
-      <div className='d-flex-row ai-center pl-20 h-50 border-bottom-2 border-white500 fs-14 fw-400 ff-roboto'>
+    <nav className='d-flex-column w-280 b-white400 border-right-2 border-white500 h-full' style={{minWidth: '28rem'}}>
+      <div className='d-flex-row ai-center pl-20 h-50 border-bottom-2 border-white500 fs-14 fw-400 ff-primary'>
         <p className='pr-15 border-right-2 border-white500 c-black500 user-select-none'>
           My todo
         </p>

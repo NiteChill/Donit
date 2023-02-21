@@ -15,7 +15,7 @@ export default function EachTodo() {
             alt='logo'
             className='w-16 h-16 mr-10 user-select-none'
           />
-          <p className='ff-roboto fs-14 c-black500'>Personal</p>
+          <p className='ff-primary fs-14 fw-400 c-black500'>Personal</p>
         </div>
         <img
           src={img}
