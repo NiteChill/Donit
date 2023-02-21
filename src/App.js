@@ -25,10 +25,12 @@ function App() {
           logo: svg.twoRectangles,
         },
       ]);
-      localStorage.setItem('userArray', JSON.stringify(userArray));
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem('userArray', JSON.stringify(userArray));
+  }, [userArray])
   return (
     <div className='App'>
       <Header />
