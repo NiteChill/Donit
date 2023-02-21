@@ -6,7 +6,7 @@ import plusLight from '../../assets/img/plus-light.svg';
 
 import EachTodo from '../EachTodo/EachTodo';
 
-export default function Navbar({ todo, active, userArray, setUserArray }) {
+export default function Navbar({ active, userArray, setUserArray }) {
   const search = useRef(null);
   const [searchValue, setSearchValue] = useState('');
   const [img, setImg] = useState(plusLight);

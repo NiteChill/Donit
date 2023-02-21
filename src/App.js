@@ -37,7 +37,6 @@ function App() {
       <Header />
       <div className='d-flex-row w-full h-full'>
         <Navbar
-          todo={userArray}
           active={name}
           userArray={userArray}
           setUserArray={setUserArray}
