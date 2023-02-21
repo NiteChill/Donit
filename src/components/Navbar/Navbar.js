@@ -11,9 +11,22 @@ export default function Navbar({ todo, active, userArray, setUserArray }) {
   const [searchValue, setSearchValue] = useState('');
   const [img, setImg] = useState(plusLight);
 
+  const [filteredUserArray, setFilteredUserArray] = useState(
+    userArray &&
+      userArray.filter((todo) =>
+        todo.name.toLowerCase().startsWith(searchValue.toLowerCase())
+      )
+  );
+
   useEffect(() => {
-    //console.log(searchValue);
-  }, [searchValue]);
+    userArray && searchValue !== ''
+      ? setFilteredUserArray(
+          userArray.filter((todo) =>
+            todo.name.toLowerCase().startsWith(searchValue.toLowerCase())
+          )
+        )
+      : setFilteredUserArray(userArray);
+  }, [searchValue, userArray]);
   return (
     <nav
       className='d-flex-column w-280 b-white400 border-right-2 border-white500 h-full'
@@ -42,8 +55,8 @@ export default function Navbar({ todo, active, userArray, setUserArray }) {
         </div>
       </div>
       <div className='d-flex-column pt-15 pr-35 pb-15 pl-35 ai-center'>
-        {todo &&
-          todo.map((todo) => (
+        {filteredUserArray &&
+          filteredUserArray.map((todo) => (
             <EachTodo
               name={todo.name}
               logo={todo.logo}
