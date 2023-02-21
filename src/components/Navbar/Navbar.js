@@ -6,7 +6,7 @@ import plusLight from '../../assets/img/plus-light.svg';
 
 import EachTodo from '../EachTodo/EachTodo';
 
-export default function Navbar() {
+export default function Navbar({ todo }) {
   const search = useRef(null);
   const [searchValue, setSearchValue] = useState('');
   const [img, setImg] = useState(plusLight);
@@ -15,7 +15,10 @@ export default function Navbar() {
     //console.log(searchValue);
   }, [searchValue]);
   return (
-    <nav className='d-flex-column w-280 b-white400 border-right-2 border-white500 h-full' style={{minWidth: '28rem'}}>
+    <nav
+      className='d-flex-column w-280 b-white400 border-right-2 border-white500 h-full'
+      style={{ minWidth: '28rem' }}
+    >
       <div className='d-flex-row ai-center pl-20 h-50 border-bottom-2 border-white500 fs-14 fw-400 ff-primary'>
         <p className='pr-15 border-right-2 border-white500 c-black500 user-select-none'>
           My todo
@@ -39,13 +42,24 @@ export default function Navbar() {
         </div>
       </div>
       <div className='d-flex-column pt-15 pr-35 pb-15 pl-35 ai-center'>
-        <EachTodo />
+        {todo &&
+          todo.map((todo) => (
+            <EachTodo
+              name={todo.name}
+              logo={todo.logo}
+              key={crypto.randomUUID()}
+            />
+          ))}
         <div
           className='d-flex-column ai-center jc-center hover-b-white500 bora-10 w-fit-content p-10 cursor-pointer'
           onMouseOver={() => setImg(plus)}
           onMouseLeave={() => setImg(plusLight)}
         >
-          <img src={img} alt='add todo' className='w-16 h-16 user-select-none' />
+          <img
+            src={img}
+            alt='add todo'
+            className='w-16 h-16 user-select-none'
+          />
         </div>
       </div>
     </nav>

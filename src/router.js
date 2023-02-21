@@ -17,7 +17,7 @@ export const router = createBrowserRouter([
         index: true,
       },
       {
-        path: '/:todo',
+        path: '/:name',
         element: <Todo />,
       },
     ],
