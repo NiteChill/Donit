@@ -27,7 +27,6 @@ function App() {
       ]);
       localStorage.setItem('userArray', JSON.stringify(userArray));
     }
-    console.log(userArray);
   }, []);
   return (
     <div className='App'>
