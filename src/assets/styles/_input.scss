@@ -1,0 +1,12 @@
+@import './variable';
+
+// input //
+
+.input-clear {
+  outline: none;
+  border: none;
+  background: none;
+  &::placeholder {
+    color: $black-500;
+  }
+}

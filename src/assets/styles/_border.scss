@@ -1,0 +1,297 @@
+@import './variable';
+
+// border //
+
+.border-none {
+  border: none;
+}
+
+.border-white300 {
+  border-color: $white-300;
+}
+
+.border-white400 {
+  border-color: $white-400;
+}
+
+.border-white500 {
+  border-color: $white-500;
+}
+
+.border-white600 {
+  border-color: $white-600;
+}
+
+.border-white700 {
+  border-color: $white-700;
+}
+
+.border-black300 {
+  border-color: $black-300;
+}
+
+.border-black400 {
+  border-color: $black-400;
+}
+
+.border-black500 {
+  border-color: $black-500;
+}
+
+.border-black600 {
+  border-color: $black-600;
+}
+
+.border-black700 {
+  border-color: $black-700;
+}
+
+.border-1 {
+  border-style: solid;
+  border-width: .1rem;
+}
+
+.border-2 {
+  border-style: solid;
+  border-width: .2rem;
+}
+
+.border-3 {
+  border-style: solid;
+  border-width: .3rem;
+}
+
+.border-4 {
+  border-style: solid;
+  border-width: .4rem;
+}
+
+.border-5 {
+  border-style: solid;
+  border-width: .5rem;
+}
+
+.border-6 {
+  border-style: solid;
+  border-width: .6rem;
+}
+
+.border-7 {
+  border-style: solid;
+  border-width: .7rem;
+}
+
+.border-8 {
+  border-style: solid;
+  border-width: .8rem;
+}
+
+.border-9 {
+  border-style: solid;
+  border-width: .9rem;
+}
+
+.border-10 {
+  border-style: solid;
+  border-top-width: 1rem;
+}
+
+.border-top-1 {
+  border-top-style: solid;
+  border-top-width: .1rem;
+}
+
+.border-top-2 {
+  border-top-style: solid;
+  border-top-width: .2rem;
+}
+
+.border-top-3 {
+  border-top-style: solid;
+  border-top-width: .3rem;
+}
+
+.border-top-4 {
+  border-top-style: solid;
+  border-top-width: .4rem;
+}
+
+.border-top-5 {
+  border-top-style: solid;
+  border-top-width: .5rem;
+}
+
+.border-top-6 {
+  border-top-style: solid;
+  border-top-width: .6rem;
+}
+
+.border-top-7 {
+  border-top-style: solid;
+  border-top-width: .7rem;
+}
+
+.border-top-8 {
+  border-top-style: solid;
+  border-top-width: .8rem;
+}
+
+.border-top-9 {
+  border-top-style: solid;
+  border-top-width: .9rem;
+}
+
+.border-top-10 {
+  border-top-style: solid;
+  border-top-width: 1rem;
+}
+
+.border-right-1 {
+  border-right-style: solid;
+  border-right-width: .1rem;
+}
+
+.border-right-2 {
+  border-right-style: solid;
+  border-right-width: .2rem;
+}
+
+.border-right-3 {
+  border-right-style: solid;
+  border-right-width: .3rem;
+}
+
+.border-right-4 {
+  border-right-style: solid;
+  border-right-width: .4rem;
+}
+
+.border-right-5 {
+  border-right-style: solid;
+  border-right-width: .5rem;
+}
+
+.border-right-6 {
+  border-right-style: solid;
+  border-right-width: .6rem;
+}
+
+.border-right-7 {
+  border-right-style: solid;
+  border-right-width: .7rem;
+}
+
+.border-right-8 {
+  border-right-style: solid;
+  border-right-width: .8rem;
+}
+
+.border-right-9 {
+  border-right-style: solid;
+  border-right-width: .9rem;
+}
+
+.border-right-10 {
+  border-right-style: solid;
+  border-right-width: 1rem;
+}
+
+.border-bottom-1 {
+  border-bottom-style: solid;
+  border-bottom-width: .1rem;
+}
+
+.border-bottom-2 {
+  border-bottom-style: solid;
+  border-bottom-width: .2rem;
+}
+
+.border-bottom-3 {
+  border-bottom-style: solid;
+  border-bottom-width: .3rem;
+}
+
+.border-bottom-4 {
+  border-bottom-style: solid;
+  border-bottom-width: .4rem;
+}
+
+.border-bottom-5 {
+  border-bottom-style: solid;
+  border-bottom-width: .5rem;
+}
+
+.border-bottom-6 {
+  border-bottom-style: solid;
+  border-bottom-width: .6rem;
+}
+
+.border-bottom-7 {
+  border-bottom-style: solid;
+  border-bottom-width: .7rem;
+}
+
+.border-bottom-8 {
+  border-bottom-style: solid;
+  border-bottom-width: .8rem;
+}
+
+.border-bottom-9 {
+  border-bottom-style: solid;
+  border-bottom-width: .9rem;
+}
+
+.border-bottom-10 {
+  border-bottom-style: solid;
+  border-bottom-width: 1rem;
+}
+
+.border-left-1 {
+  border-left-style: solid;
+  border-left-width: .1rem;
+}
+
+.border-left-2 {
+  border-left-style: solid;
+  border-left-width: .2rem;
+}
+
+.border-left-3 {
+  border-left-style: solid;
+  border-left-width: .3rem;
+}
+
+.border-left-4 {
+  border-left-style: solid;
+  border-left-width: .4rem;
+}
+
+.border-left-5 {
+  border-left-style: solid;
+  border-left-width: .5rem;
+}
+
+.border-left-6 {
+  border-left-style: solid;
+  border-left-width: .6rem;
+}
+
+.border-left-7 {
+  border-left-style: solid;
+  border-left-width: .7rem;
+}
+
+.border-left-8 {
+  border-left-style: solid;
+  border-left-width: .8rem;
+}
+
+.border-left-9 {
+  border-left-style: solid;
+  border-left-width: .9rem;
+}
+
+.border-left-10 {
+  border-left-style: solid;
+  border-left-width: 1rem;
+}

@@ -1,0 +1,33 @@
+@use './assets/styles/background';
+@use './assets/styles/border';
+@use './assets/styles/border_radius';
+@use './assets/styles/color';
+@use './assets/styles/cursor';
+@use './assets/styles/flex';
+@use './assets/styles/font';
+@use './assets/styles/height';
+@use './assets/styles/input';
+@use './assets/styles/margin';
+@use './assets/styles/padding';
+@use './assets/styles/variable';
+@use './assets/styles/width';
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*, ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  // 1rem = 10px // 
+  font-size: 62.5%;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}

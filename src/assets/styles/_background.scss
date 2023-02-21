@@ -1,0 +1,27 @@
+@import './variable';
+
+// background //
+
+.background-none {
+  background: none;
+}
+
+.b-white300 {
+  background: $white-300;
+}
+
+.b-white400 {
+  background: $white-400;
+}
+
+.b-white500 {
+  background: $white-500;
+}
+
+.b-white600 {
+  background: $white-600;
+}
+
+.b-white700 {
+  background: $white-700;
+}
