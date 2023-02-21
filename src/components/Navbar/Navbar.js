@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 
 import glass from '../../assets/img/glass.svg';
 
+import EachTodo from '../EachTodo/EachTodo';
+
 export default function Navbar() {
   const search = useRef(null);
   const [searchValue, setSearchValue] = useState('');
@@ -31,6 +33,9 @@ export default function Navbar() {
             onFocus={(e) => e.target.select()}
           />
         </div>
+      </div>
+      <div className='d-flex-row pt-15 pr-35 pb-15 pl-35'>
+        <EachTodo />
       </div>
     </nav>
   );

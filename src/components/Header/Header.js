@@ -1,4 +1,4 @@
-import pofilePicture from '../../assets/img/profile_picture.png'
+import pofilePicture from '../../assets/img/profile-picture.png'
 
 export default function Header() {
   return (
