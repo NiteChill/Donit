@@ -27,12 +27,13 @@ function App() {
       ]);
       localStorage.setItem('userArray', JSON.stringify(userArray));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <div className='App'>
       <Header />
       <div className='d-flex-row w-full h-full'>
-        <Navbar todo={userArray} active={name} />
+        <Navbar todo={userArray} active={name} userArray={userArray} setUserArray={setUserArray} />
         <Outlet />
       </div>
     </div>

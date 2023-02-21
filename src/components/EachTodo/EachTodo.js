@@ -6,18 +6,24 @@ import dotsVerticalLight from '../../assets/img/dots-vertical-light.svg';
 
 import ContextMenu from '../ContextMenu/ContextMenu';
 
-export default function EachTodo({ logo, name, active }) {
+export default function EachTodo({ logo, name, active, userArray, setUserArray }) {
   const [img, setImg] = useState(dotsVerticalLight);
   const [menu, setMenu] = useState(false);
+  const [temporaryArray, setTemporaryArray] = useState('');
+
   const navigate = useNavigate();
   return (
     <>
       <div className='pos-relative w-full'>
-        <div className={`d-flex-row mb-5 w-full ai-center jc-space-between hover-b-white500 bora-10 cursor-pointer ${name.replace(/ /g, '_') === active && 'b-white500'}`}>
+        <div
+          className={`d-flex-row mb-5 w-full ai-center jc-space-between hover-b-white500 bora-10 cursor-pointer ${
+            name.replace(/ /g, '_') === active && 'b-white500'
+          }`}
+        >
           <NavLink
             to={`/${name.replace(/ /g, '_')}`}
             className='d-flex-row pt-10 pr-15 pb-10 pl-15 ai-center'
-            style={{flex: '1'}}
+            style={{ flex: '1' }}
           >
             <img
               src={logo}
@@ -39,10 +45,25 @@ export default function EachTodo({ logo, name, active }) {
             />
           </div>
         </div>
-        {menu && <ContextMenu open={() => {
-          setMenu(false);
-          navigate(`/${name.replace(/ /g, '_')}`);
-        }} />}
+        {menu && (
+          <ContextMenu
+            open={() => {
+              setMenu(false);
+              navigate(`/${name.replace(/ /g, '_')}`);
+            }}
+            kill={() => {
+              setMenu(false);
+              setTemporaryArray(
+                userArray.slice(
+                  userArray.indexOf(
+                    userArray.find((user) => user.name === name)
+                  )
+                )
+              );
+              setUserArray(temporaryArray);
+            }}
+          />
+        )}
       </div>
       {menu && (
         <div
