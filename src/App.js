@@ -30,12 +30,18 @@ function App() {
 
   useEffect(() => {
     localStorage.setItem('userArray', JSON.stringify(userArray));
-  }, [userArray])
+  }, [userArray]);
+
   return (
     <div className='App'>
       <Header />
       <div className='d-flex-row w-full h-full'>
-        <Navbar todo={userArray} active={name} userArray={userArray} setUserArray={setUserArray} />
+        <Navbar
+          todo={userArray}
+          active={name}
+          userArray={userArray}
+          setUserArray={setUserArray}
+        />
         <Outlet />
       </div>
     </div>

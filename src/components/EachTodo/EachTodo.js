@@ -6,7 +6,13 @@ import dotsVerticalLight from '../../assets/img/dots-vertical-light.svg';
 
 import ContextMenu from '../ContextMenu/ContextMenu';
 
-export default function EachTodo({ logo, name, active, userArray, setUserArray }) {
+export default function EachTodo({
+  logo,
+  name,
+  active,
+  userArray,
+  setUserArray,
+}) {
   const [img, setImg] = useState(dotsVerticalLight);
   const [menu, setMenu] = useState(false);
   const [temporaryArray, setTemporaryArray] = useState('');
@@ -39,7 +45,7 @@ export default function EachTodo({ logo, name, active, userArray, setUserArray }
               className='w-16 h-16 user-select-none'
               onMouseOver={() => setImg(dotsVertical)}
               onMouseLeave={() => setImg(dotsVerticalLight)}
-              onClick={(e) => {
+              onClick={() => {
                 setMenu(true);
               }}
             />
