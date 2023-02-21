@@ -1,12 +1,16 @@
 import { useEffect, useRef, useState } from 'react';
 
 import glass from '../../assets/img/glass.svg';
+import plus from '../../assets/img/plus.svg';
+import plusLight from '../../assets/img/plus-light.svg';
 
 import EachTodo from '../EachTodo/EachTodo';
 
 export default function Navbar() {
   const search = useRef(null);
   const [searchValue, setSearchValue] = useState('');
+  const [img, setImg] = useState(plusLight);
+
   useEffect(() => {
     //console.log(searchValue);
   }, [searchValue]);
@@ -34,8 +38,15 @@ export default function Navbar() {
           />
         </div>
       </div>
-      <div className='d-flex-row pt-15 pr-35 pb-15 pl-35'>
+      <div className='d-flex-column pt-15 pr-35 pb-15 pl-35 ai-center'>
         <EachTodo />
+        <div
+          className='d-flex-column ai-center jc-center hover-b-white500 bora-10 w-fit-content p-10 cursor-pointer'
+          onMouseOver={() => setImg(plus)}
+          onMouseLeave={() => setImg(plusLight)}
+        >
+          <img src={img} alt='add todo' className='w-16 h-16 user-select-none' />
+        </div>
       </div>
     </nav>
   );

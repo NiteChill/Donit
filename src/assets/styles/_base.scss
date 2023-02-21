@@ -1,0 +1,63 @@
+@import './variable';
+
+*, ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  // 1rem = 10px // 
+  font-size: 62.5%;
+}
+
+.body {
+  font-size: 1.6rem;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+
+// active //
+
+.active {
+  background: $white-500;
+}
+
+// cursor //
+
+.cursor-pointer {
+  cursor: pointer;
+}
+.cursor-context-menu {
+  cursor: context-menu;
+}
+
+// hover //
+
+.hover-b-white500 {
+  &:hover {
+    background: $white-500;
+  }
+}
+
+// input //
+
+.input-clear {
+  outline: none;
+  border: none;
+  background: none;
+  &::placeholder {
+    color: $black-500;
+  }
+}
+
+// user-select //
+
+.user-select-none {
+  user-select: none;
+}
