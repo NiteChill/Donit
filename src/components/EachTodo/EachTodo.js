@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 
 import dotsVertical from '../../assets/img/dots-vertical.svg';
@@ -15,9 +15,14 @@ export default function EachTodo({
 }) {
   const [img, setImg] = useState(dotsVerticalLight);
   const [menu, setMenu] = useState(false);
-  const [temporaryArray, setTemporaryArray] = useState('');
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    console.log('each');
+    console.log(userArray);
+  }, [userArray]);
+
   return (
     <>
       <div className='pos-relative w-full'>
@@ -59,15 +64,11 @@ export default function EachTodo({
             }}
             kill={() => {
               setMenu(false);
-              setTemporaryArray(
-                userArray.slice(
-                  userArray.indexOf(
-                    userArray.find((user) => user.name === name)
-                  )
-                )
-              );
+              let temporaryArray = userArray;
+              temporaryArray.splice(userArray.indexOf(userArray.find((user) => user.name === name)),1)
               setUserArray(temporaryArray);
-            }}
+              console.log(temporaryArray);
+            }}  
           />
         )}
       </div>

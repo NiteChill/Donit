@@ -24,12 +24,30 @@ function App() {
           name: 'My first todo',
           logo: svg.twoRectangles,
         },
+        {
+          name: 'My second todo',
+          logo: svg.twoRectangles,
+        },
+        {
+          name: 'hello',
+          logo: svg.twoRectangles,
+        },
+        {
+          name: 'mom',
+          logo: svg.twoRectangles,
+        },
+        {
+          name: 'lullll',
+          logo: svg.twoRectangles,
+        },
       ]);
     }
   }, []);
 
   useEffect(() => {
     localStorage.setItem('userArray', JSON.stringify(userArray));
+    console.log('app');
+    console.log(userArray);
   }, [userArray]);
 
   return (
