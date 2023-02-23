@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useContext } from 'react';
 
 import glass from '../../assets/img/glass.svg';
 import plus from '../../assets/img/plus.svg';
@@ -6,7 +6,12 @@ import plusLight from '../../assets/img/plus-light.svg';
 
 import EachTodo from '../EachTodo/EachTodo';
 
-export default function Navbar({ active, userArray, setUserArray }) {
+import { ContextData } from '../../context/ContextData';
+
+export default function Navbar({ active }) {
+  const MyContext = ContextData();
+  const [userArray, setUserArray] = useContext(MyContext);
+
   const search = useRef(null);
   const [searchValue, setSearchValue] = useState('');
   const [img, setImg] = useState(plusLight);
@@ -27,6 +32,11 @@ export default function Navbar({ active, userArray, setUserArray }) {
         )
       : setFilteredUserArray(userArray);
   }, [searchValue, userArray]);
+
+    useEffect(() => {
+      localStorage.setItem('userArray', JSON.stringify(userArray));
+      console.log(userArray);
+    }, [userArray]);
   return (
     <nav
       className='d-flex-column w-280 b-white400 border-right-2 border-white500 h-full'

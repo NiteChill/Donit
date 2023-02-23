@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 
 import dotsVertical from '../../assets/img/dots-vertical.svg';
@@ -17,11 +17,6 @@ export default function EachTodo({
   const [menu, setMenu] = useState(false);
 
   const navigate = useNavigate();
-
-  useEffect(() => {
-    console.log('each');
-    console.log(userArray);
-  }, [userArray]);
 
   return (
     <>
@@ -65,10 +60,14 @@ export default function EachTodo({
             kill={() => {
               setMenu(false);
               let temporaryArray = userArray;
-              temporaryArray.splice(userArray.indexOf(userArray.find((user) => user.name === name)),1)
-              setUserArray(temporaryArray);
+              temporaryArray.splice(
+                userArray.indexOf(userArray.find((user) => user.name === name)),
+                1
+              );
               console.log(temporaryArray);
-            }}  
+              setUserArray(temporaryArray);
+              console.log(userArray);
+            }}
           />
         )}
       </div>
