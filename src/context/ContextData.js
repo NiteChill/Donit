@@ -1,40 +1,27 @@
-import { createContext } from "react";
-import { useState, useEffect } from "react";
+import { createContext } from 'react';
+import { useState, useEffect } from 'react';
 
 import { svg } from '../datas/svg';
 
 export function ContextData() {
   const [userArray, setUserArray] = useState('');
 
-
+  const storage = JSON.parse(localStorage.getItem('userArray'));
   useEffect(() => {
-    const storage = JSON.parse(localStorage.getItem('userArray'));
-    if (storage && storage.length !== '') {
+    console.log(storage);
+    if (storage) {
       setUserArray(storage);
+      console.log('nice');
     } else {
       setUserArray([
         {
+          id: 0,
           name: 'My first todo',
-          logo: svg.twoRectangles,
-        },
-        {
-          name: 'My second todo',
-          logo: svg.twoRectangles,
-        },
-        {
-          name: 'hello',
-          logo: svg.twoRectangles,
-        },
-        {
-          name: 'mom',
-          logo: svg.twoRectangles,
-        },
-        {
-          name: 'lullll',
           logo: svg.twoRectangles,
         },
       ]);
     }
+    // eslint-disable-next-line
   }, []);
 
   const MyContext = createContext([userArray, setUserArray]);

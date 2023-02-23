@@ -7,8 +7,9 @@ import dotsVerticalLight from '../../assets/img/dots-vertical-light.svg';
 import ContextMenu from '../ContextMenu/ContextMenu';
 
 export default function EachTodo({
-  logo,
+  id,
   name,
+  logo,
   active,
   userArray,
   setUserArray,
@@ -59,14 +60,7 @@ export default function EachTodo({
             }}
             kill={() => {
               setMenu(false);
-              let temporaryArray = userArray;
-              temporaryArray.splice(
-                userArray.indexOf(userArray.find((user) => user.name === name)),
-                1
-              );
-              console.log(temporaryArray);
-              setUserArray(temporaryArray);
-              console.log(userArray);
+              setUserArray(userArray.filter((todo) => todo.id !== id));
             }}
           />
         )}

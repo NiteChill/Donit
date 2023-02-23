@@ -3,6 +3,7 @@ import { useEffect, useRef, useState, useContext } from 'react';
 import glass from '../../assets/img/glass.svg';
 import plus from '../../assets/img/plus.svg';
 import plusLight from '../../assets/img/plus-light.svg';
+import { svg } from '../../datas/svg';
 
 import EachTodo from '../EachTodo/EachTodo';
 
@@ -15,6 +16,13 @@ export default function Navbar({ active }) {
   const search = useRef(null);
   const [searchValue, setSearchValue] = useState('');
   const [img, setImg] = useState(plusLight);
+  const [update, setUpdate] = useState(false);
+
+  useEffect(() => {
+    setUpdate(false);
+    setImg(plusLight);
+    localStorage.setItem('userArray', JSON.stringify(userArray));
+  }, [update, userArray]);
 
   const [filteredUserArray, setFilteredUserArray] = useState(
     userArray &&
@@ -33,10 +41,6 @@ export default function Navbar({ active }) {
       : setFilteredUserArray(userArray);
   }, [searchValue, userArray]);
 
-    useEffect(() => {
-      localStorage.setItem('userArray', JSON.stringify(userArray));
-      console.log(userArray);
-    }, [userArray]);
   return (
     <nav
       className='d-flex-column w-280 b-white400 border-right-2 border-white500 h-full'
@@ -68,6 +72,7 @@ export default function Navbar({ active }) {
         {filteredUserArray &&
           filteredUserArray.map((todo) => (
             <EachTodo
+              id={todo.id}
               name={todo.name}
               logo={todo.logo}
               key={crypto.randomUUID()}
@@ -76,17 +81,31 @@ export default function Navbar({ active }) {
               setUserArray={setUserArray}
             />
           ))}
-        <div
-          className='d-flex-column ai-center jc-center hover-b-white500 bora-10 w-fit-content p-10 cursor-pointer'
-          onMouseOver={() => setImg(plus)}
-          onMouseLeave={() => setImg(plusLight)}
-        >
-          <img
-            src={img}
-            alt='add todo'
-            className='w-16 h-16 user-select-none'
-          />
-        </div>
+        {!update && (
+          <div
+            className='d-flex-column ai-center jc-center hover-b-white500 bora-10 w-fit-content p-10 cursor-pointer'
+            onMouseOver={() => setImg(plus)}
+            onMouseLeave={() => setImg(plusLight)}
+            onClick={() => {
+              setUserArray(() => {
+                let temporaryArray = userArray;
+                temporaryArray.push({
+                  id: userArray.length,
+                  name: 'Untitled',
+                  logo: svg.twoRectangles,
+                });
+                return temporaryArray;
+              });
+              setUpdate(true);
+            }}
+          >
+            <img
+              src={img}
+              alt='add todo'
+              className='w-16 h-16 user-select-none'
+            />
+          </div>
+        )}
       </div>
     </nav>
   );

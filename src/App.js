@@ -8,6 +8,17 @@ import Navbar from './components/Navbar/Navbar';
 
 function App() {
   const { name } = useParams();
+
+  // localStorage.setItem(
+  //   'userArray',
+  //   JSON.stringify([
+  //     {
+  //       name: 'My first todo',
+  //       logo: '',
+  //     },
+  //   ])
+  // );
+  
   return (
     <div className='App'>
       <Header />
