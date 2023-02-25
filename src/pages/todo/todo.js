@@ -4,7 +4,7 @@ export default function Todo() {
   const { name } = useParams();
   return (
     <div>
-      <p>{name.replace(/_/g, ' ')}</p>
+      <p>{name}</p>
     </div>
   );
 }

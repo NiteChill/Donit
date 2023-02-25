@@ -1,10 +1,5 @@
 import { useEffect, useRef, useState, useContext } from 'react';
 
-import glass from '../../assets/img/glass.svg';
-import plus from '../../assets/img/plus.svg';
-import plusLight from '../../assets/img/plus-light.svg';
-import { svg } from '../../datas/svg';
-
 import EachTodo from '../EachTodo/EachTodo';
 
 import { ContextData } from '../../context/ContextData';
@@ -15,12 +10,10 @@ export default function Navbar({ active }) {
 
   const search = useRef(null);
   const [searchValue, setSearchValue] = useState('');
-  const [img, setImg] = useState(plusLight);
   const [update, setUpdate] = useState(false);
 
   useEffect(() => {
     setUpdate(false);
-    setImg(plusLight);
     localStorage.setItem('userArray', JSON.stringify(userArray));
   }, [update, userArray]);
 
@@ -51,12 +44,12 @@ export default function Navbar({ active }) {
           My todo
         </p>
         <div className='d-flex-row ai-center pt-10 pr-15 pb-10 pl-15'>
-          <img
-            src={glass}
-            alt='glass'
-            className='w-16 h-16 mr-10 cursor-pointer user-select-none'
+          <span
+            className='material-symbols-rounded mr-10 fs-20 cursor-pointer user-select-none'
             onClick={() => search.current.focus()}
-          />
+          >
+            search
+          </span>
           <input
             type='text'
             name='search'
@@ -82,29 +75,24 @@ export default function Navbar({ active }) {
             />
           ))}
         {!update && (
-          <div
-            className='d-flex-column ai-center jc-center hover-b-white500 bora-10 w-fit-content p-10 cursor-pointer'
-            onMouseOver={() => setImg(plus)}
-            onMouseLeave={() => setImg(plusLight)}
+          <span
+            className='material-symbols-rounded fs-18 cursor-pointer user-select-none c-white700 p-10 bora-10 hover-b-white500 hover-c-black500'
             onClick={() => {
+              search.current.focus();
               setUserArray(() => {
                 let temporaryArray = userArray;
                 temporaryArray.push({
                   id: userArray.length,
                   name: 'Untitled',
-                  logo: svg.twoRectangles,
+                  logo: 'category',
                 });
                 return temporaryArray;
               });
               setUpdate(true);
             }}
           >
-            <img
-              src={img}
-              alt='add todo'
-              className='w-16 h-16 user-select-none'
-            />
-          </div>
+            add
+          </span>
         )}
       </div>
     </nav>

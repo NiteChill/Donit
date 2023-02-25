@@ -1,9 +1,6 @@
 import { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 
-import dotsVertical from '../../assets/img/dots-vertical.svg';
-import dotsVerticalLight from '../../assets/img/dots-vertical-light.svg';
-
 import ContextMenu from '../ContextMenu/ContextMenu';
 
 export default function EachTodo({
@@ -14,7 +11,6 @@ export default function EachTodo({
   userArray,
   setUserArray,
 }) {
-  const [img, setImg] = useState(dotsVerticalLight);
   const [menu, setMenu] = useState(false);
 
   const navigate = useNavigate();
@@ -24,32 +20,26 @@ export default function EachTodo({
       <div className='pos-relative w-full'>
         <div
           className={`d-flex-row mb-5 w-full ai-center jc-space-between hover-b-white500 bora-10 cursor-pointer ${
-            name.replace(/ /g, '_') === active && 'b-white500'
+            name.replace(/ /g, '_')+id === active && 'b-white500'
           }`}
         >
           <NavLink
-            to={`/${name.replace(/ /g, '_')}`}
+            to={`/${name.replace(/ /g, '_') + id}`}
             className='d-flex-row pt-10 pr-15 pb-10 pl-15 ai-center'
             style={{ flex: '1' }}
           >
-            <img
-              src={logo}
-              alt='logo'
-              className='w-16 h-16 mr-10 user-select-none'
-            />
+            <span className='material-symbols-rounded fs-18 mr-10 user-select-none'>{logo}</span>
             <p className='ff-primary fs-14 fw-400 c-black500'>{name}</p>
           </NavLink>
           <div className='d-flex-row pt-10 pr-15 pb-10 pl-15 ai-center'>
-            <img
-              src={img}
-              alt='3 dots'
-              className='w-16 h-16 user-select-none'
-              onMouseOver={() => setImg(dotsVertical)}
-              onMouseLeave={() => setImg(dotsVerticalLight)}
+            <span
+              className='material-symbols-rounded fs-22 user-select-none hover-c-black500 c-white700'
               onClick={() => {
                 setMenu(true);
               }}
-            />
+            >
+              more_vert
+            </span>
           </div>
         </div>
         {menu && (
